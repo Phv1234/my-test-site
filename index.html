@@ -12,5 +12,18 @@
 <body>
   <h1>🚀 Welcome to My Test Site</h1>
   <p>This is my first free website on GitHub Pages.</p>
+  <div id="counter" style="font-size:24px; margin-top:20px;">Requests: 0</div>
 </body>
+  <script>
+let requests = 0;
+
+// Function to increment the counter
+function incrementCounter() {
+    requests++;
+    document.getElementById('counter').innerText = "Requests: " + requests;
+}
+
+// Simulate a request every second
+setInterval(incrementCounter, 1000);
+</script>
 </html>
