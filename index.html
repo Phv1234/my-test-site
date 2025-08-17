@@ -13,8 +13,9 @@
   <h1>🚀 Welcome to My Test Site</h1>
   <p>This is my first free website on GitHub Pages.</p>
   <div id="counter" style="font-size:24px; margin-top:20px;">Requests: 0</div>
+  <button onclick="burstAttack()" style="font-size:18px; margin-top:20px;">💥 BURST ATTACK</button>
 </body>
-  <script>
+ <script>
 let requests = 0;
 
 // Function to increment counter by multiple requests at once
@@ -23,11 +24,15 @@ function incrementCounter(times = 1) {
     document.getElementById('counter').innerText = "Requests: " + requests;
 }
 
-// Simulate random bursts of requests
+// Automatic random bursts every 0.3 seconds
 setInterval(() => {
-    // Simulate 1–10 requests randomly every 0.5 seconds
-    let burst = Math.floor(Math.random() * 10) + 1;
+    let burst = Math.floor(Math.random() * 20) + 1; // 1–20 requests
     incrementCounter(burst);
-}, 500);
+}, 300);
+
+// Optional: “BURST ATTACK” button to instantly jump
+function burstAttack() {
+    incrementCounter(200); // jump 200 requests instantly
+}
 </script>
 </html>
