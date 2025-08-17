@@ -17,13 +17,17 @@
   <script>
 let requests = 0;
 
-// Function to increment the counter
-function incrementCounter() {
-    requests++;
+// Function to increment counter by multiple requests at once
+function incrementCounter(times = 1) {
+    requests += times;
     document.getElementById('counter').innerText = "Requests: " + requests;
 }
 
-// Simulate a request every second
-setInterval(incrementCounter, 1000);
+// Simulate random bursts of requests
+setInterval(() => {
+    // Simulate 1–10 requests randomly every 0.5 seconds
+    let burst = Math.floor(Math.random() * 10) + 1;
+    incrementCounter(burst);
+}, 500);
 </script>
 </html>
